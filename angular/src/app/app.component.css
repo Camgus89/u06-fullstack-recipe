@@ -1,0 +1,38 @@
+.navbar {
+  margin-bottom: 20px;
+  background-color: #FFF3E0;
+  padding: 20px;
+}
+
+.d-flex{
+  display: flex;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center; /* Centrera vertikalt */
+}
+
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.navbar-brand, .navbar-toggler {
+  margin-right: auto; /* Flytta logon till vänster och knapparna till höger */
+}
+
+button{
+    background: #FFB74D;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    transition: background-color 0.3s; 
+    margin-left: 15px;
+}
+
+button:hover {
+  background-color: #D7CCC8; /* Ny färg vid hover */
+}
+

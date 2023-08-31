@@ -1,0 +1,18 @@
+article {
+    margin: 20px 10px;
+    justify-content: center;
+}
+
+img {
+    border-radius: 5px;
+}
+
+a {
+    background: #FFB74D;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 40px;
+    margin: 20px;
+    border: none;
+    text-decoration: none;
+}

@@ -1,0 +1,33 @@
+.box {
+  margin: auto;
+  display: flex;
+  flex-direction: column; /* Ändra flex-riktningen till kolumn */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 2px solid #A5D6A7;
+  border-radius: 5px;
+  max-width: 400px; /* Maximal bredd för rutan */
+  margin-top: 30px; /* Uppdatera margin-top för att centrera vertikalt */
+  margin-bottom: 30px;
+}
+
+.input-field {
+  width: 100%; /* Fyll hela bredden av föräldern */
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+  button {
+    background: #FFB74D;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 40px;
+    margin: 20px 0;
+    border: none;
+  }
+
+  h1 {
+    text-align: center;
+    color: #5ea360;
+  }

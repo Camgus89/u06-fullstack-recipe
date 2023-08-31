@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand mr-auto" href="#">
+      <img src="./assets/logo.png" alt="Logo" width="50" height="50">
+    </a>
+    <div class="ml-auto">
+      <button class="btn btn-primary" type="button" routerLink="/login">Login</button>
+      <button class="btn btn-success" type="button" routerLink="/register">Register</button>
+      <button class="btn btn-primary" type="button" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</nav>
+
+
+<router-outlet></router-outlet>
+<app-footer></app-footer>

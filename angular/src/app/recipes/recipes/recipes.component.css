@@ -1,0 +1,40 @@
+a {
+    text-decoration: none;
+}
+
+article {
+    margin: 20px 10px;
+}
+
+img {
+    border-radius: 5px;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column; /* Ändra flex-riktningen till kolumn */
+    align-items: center; /* Centrera vertikalt */
+    justify-content: center; /* Centrera horisontellt */
+    margin: 20px 0; /* Justera marginaler för önskat utseende */
+  }
+  
+.input-container input {
+    width: 90%; /* Fyll hela bredden av föräldern */
+    padding: 10px;
+    margin-bottom: 10px;  
+}
+  
+button {
+    width: 90%; /* Fyll hela bredden av föräldern */
+    background: #FFB74D;
+    color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    transition: background-color 0.3s; /* Lägg till övergångseffekt för bakgrundsfärg */
+}
+
+button:hover {
+    background-color: #D7CCC8; /* Ny färg vid hover */
+}
