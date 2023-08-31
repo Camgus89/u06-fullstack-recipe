@@ -13,6 +13,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RecipeFilterComponent } from './components/recipe-filter/recipe-filter.component';
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { RecipeFilterComponent } from './components/recipe-filter/recipe-filter.
     LoginComponent,
     RegisterComponent,
     RecipeFilterComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,

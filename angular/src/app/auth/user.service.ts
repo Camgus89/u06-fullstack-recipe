@@ -3,6 +3,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs';
 import { User } from '../user';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class UserService {
   // password: string = '';
   // password_confirmation: string = '';
 
-  configURL = "";
+  configURL = "http://localhost:4200/";
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -23,17 +24,17 @@ export class UserService {
     })
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-
-  loginUser(user: User){
+  loginUser(user: User) {
     this.http.post<any>(this.configURL + "login", user, this.httpOptions)
-    .pipe(catchError(this.handleError))
-    .subscribe(res => {
-      console.log(res)
-      localStorage.setItem("token", res.token);
-      console.log("test successful")
-    })
+      .pipe(catchError(this.handleError))
+      .subscribe(res => {
+        console.log(res);
+        localStorage.setItem("token", res.token);
+        console.log("test successful");
+        this.router.navigate(['/welcome'], { queryParams: { userName: user.name } });
+      });
   }
 
   logoutUser(user: User) {
