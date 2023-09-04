@@ -27,7 +27,7 @@ export class LoginComponent {
   }
 
   login(){
-    this.userService.loginUser(this.loginForm.value)
+    this.userService.loginUser(this.loginForm.value);
     this.router.navigate(['/']);
   }
 

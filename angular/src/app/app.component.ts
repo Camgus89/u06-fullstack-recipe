@@ -8,7 +8,7 @@ import { UserService } from './auth/user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Recipe'; // Make sure this line is present
+  title = 'Recipe';
 
   me = {
     id: 0,

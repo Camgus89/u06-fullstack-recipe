@@ -15,7 +15,8 @@ export class UserService {
   // password: string = '';
   // password_confirmation: string = '';
 
-  configURL = "http://localhost:4200/";
+  configURL = "http://localhost:8000/api/";
+
 
   httpOptions = {
     headers: new HttpHeaders({
