@@ -1,22 +1,22 @@
 <div class="container">
   <app-header></app-header>
 
-  
-
   <div class="input-container">
     <input type="text" class="form-control" #input placeholder="Search Recipes" [(ngModel)]="searchquery">
     <button type="button" (click)="getRecipes()">Find recipe</button>
   </div>
-  
 
-  <article *ngFor="let recipe of allRecipes">
-  <h2><a [routerLink]="'recipe/'+recipe.idref" routerLinkActive="active">{{recipe.label}}</a></h2>
-  <img [src]="recipe.image" [alt]="recipe.label">
-  <p>Ingredients:</p>
-  <ul>
-    <li *ngFor="let ingredient of recipe.ingredientLines">
-      {{ingredient}}
-    </li>
-  </ul>
-  </article>
+  <!-- Använd container-diven med layout-klassen -->
+  <div class="recipe-card-container">
+    <article class="recipe-card" *ngFor="let recipe of allRecipes">
+      <h2 class="recipe-title"><a [routerLink]="'recipe/'+recipe.idref" routerLinkActive="active">{{recipe.label}}</a></h2>
+      <img class="recipe-image" [src]="recipe.image" [alt]="recipe.label">
+      <p class="recipe-ingredients">Ingredients:</p>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredientLines">
+          {{ingredient}}
+        </li>
+      </ul>
+    </article>
+  </div>
 </div>

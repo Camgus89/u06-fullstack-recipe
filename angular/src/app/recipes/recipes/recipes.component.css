@@ -12,29 +12,62 @@ img {
 
 .input-container {
     display: flex;
-    flex-direction: column; /* Ändra flex-riktningen till kolumn */
-    align-items: center; /* Centrera vertikalt */
-    justify-content: center; /* Centrera horisontellt */
-    margin: 20px 0; /* Justera marginaler för önskat utseende */
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center; 
+    margin: 20px 0; 
   }
   
 .input-container input {
-    width: 90%; /* Fyll hela bredden av föräldern */
+    width: 90%;
     padding: 10px;
     margin-bottom: 10px;  
 }
   
 button {
-    width: 90%; /* Fyll hela bredden av föräldern */
+    width: 90%; 
     background: #FFB74D;
     color: #fff;
     border-radius: 15px;
     padding: 10px;
     margin: 10px 0;
     border: none;
-    transition: background-color 0.3s; /* Lägg till övergångseffekt för bakgrundsfärg */
+    transition: background-color 0.3s; 
 }
 
 button:hover {
-    background-color: #D7CCC8; /* Ny färg vid hover */
+    background-color: #D7CCC8;
 }
+
+.recipe-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: calc(50% - 20px);
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box; 
+  }
+  
+  .recipe-card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+  }
+  
+  .recipe-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .recipe-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .recipe-ingredients {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+    
