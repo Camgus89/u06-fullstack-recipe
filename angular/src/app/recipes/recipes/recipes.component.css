@@ -12,27 +12,50 @@ img {
 
 .input-container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    justify-content: center; 
-    margin: 20px 0; 
-  }
-  
+    justify-content: center;
+    margin: 20px 0;
+}
+
 .input-container input {
     width: 90%;
     padding: 10px;
-    margin-bottom: 10px;  
+    margin-bottom: 10px;
 }
-  
-button {
-    width: 90%; 
+
+.meal-type-buttons {
+    display: flex;
+    justify-content: center; /* Centrera knapparna horisontellt */
+    width: 90%;
+    margin: 10px auto; /* Centrera knapparna både horisontellt och vertikalt */
+}
+
+.meal-type-buttons button {
+    width: 30%; /* Justera bredden enligt ditt önskemål */
     background: #FFB74D;
     color: #fff;
     border-radius: 15px;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 5px; /* Lägg till lite marginal mellan knapparna */
     border: none;
-    transition: background-color 0.3s; 
+    transition: background-color 0.3s;
+    font-size: 14px; /* Justera textstorleken */
+}
+
+.meal-type-buttons button:hover {
+    background-color: #D7CCC8;
+}
+
+button {
+    width: 90%;
+    background: #FFB74D;
+    color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px auto; /* Centrera knappen både horisontellt och vertikalt */
+    border: none;
+    transition: background-color 0.3s;
 }
 
 button:hover {
@@ -46,28 +69,27 @@ button:hover {
     width: calc(50% - 20px);
     display: inline-block;
     text-align: center;
-    box-sizing: border-box; 
-  }
-  
-  .recipe-card-container {
+    box-sizing: border-box;
+}
+
+.recipe-card-container {
     display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-  }
-  
-  .recipe-image {
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.recipe-image {
     max-width: 100%;
     height: auto;
-  }
-  
-  .recipe-title {
+}
+
+.recipe-title {
     font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
-  }
-  
-  .recipe-ingredients {
+}
+
+.recipe-ingredients {
     font-size: 14px;
     margin-top: 10px;
-  }
-    
+}

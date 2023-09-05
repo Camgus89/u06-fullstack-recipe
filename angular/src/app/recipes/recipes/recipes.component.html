@@ -1,9 +1,15 @@
 <div class="container">
   <app-header></app-header>
 
+  <div class="meal-type-buttons">
+    <button type="button" (click)="getBreakfastRecipes()">Breakfast Recipes</button>
+    <button type="button" (click)="getLunchRecipes()">Lunch Recipes</button>
+    <button type="button" (click)="getDinnerRecipes()">Dinner Recipes</button>
+  </div>
+
   <div class="input-container">
     <input type="text" class="form-control" #input placeholder="Search Recipes" [(ngModel)]="searchquery">
-    <button type="button" (click)="getRecipes()">Find recipe</button>
+    <button type="button" (click)="getRecipes()">Search ALL Recipes</button>
   </div>
 
   <!-- Använd container-diven med layout-klassen -->

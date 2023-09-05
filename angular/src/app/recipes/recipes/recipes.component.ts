@@ -11,19 +11,45 @@ export class RecipesComponent {
   searchquery = "";
   allRecipes: any;
 
-  constructor(private recipeService:RecipeService){}
+  constructor(private recipeService: RecipeService) { }
 
-  getRecipes(){
-    this.recipeService.getRecipes(this.searchquery).subscribe(result => {
-      let recipes = result.hits.map((data: any) => {
+  getBreakfastRecipes() {
+    this.recipeService.getBreakfastRecipes().subscribe(result => {
+      this.allRecipes = result.hits.map((data: any) => {
         let recipe = data.recipe;
-        recipe.idref = data._links.self.href.slice(38,70);
+        recipe.idref = data._links.self.href.slice(38, 70);
         return recipe;
-      })
-      console.log(result.hits[0]);
-      console.log(recipes)
+      });
+    });
+  }
 
-      this.allRecipes = recipes;
-    })
+  getDinnerRecipes() {
+    this.recipeService.getDinnerRecipes().subscribe(result => {
+      this.allRecipes = result.hits.map((data: any) => {
+        let recipe = data.recipe;
+        recipe.idref = data._links.self.href.slice(38, 70);
+        return recipe;
+      });
+    });
+  }
+
+  getLunchRecipes() {
+    this.recipeService.getLunchRecipes().subscribe(result => {
+      this.allRecipes = result.hits.map((data: any) => {
+        let recipe = data.recipe;
+        recipe.idref = data._links.self.href.slice(38, 70);
+        return recipe;
+      });
+    });
+  }
+
+  getRecipes() {
+    this.recipeService.getRecipesByKeyword(this.searchquery).subscribe(result => {
+      this.allRecipes = result.hits.map((data: any) => {
+        let recipe = data.recipe;
+        recipe.idref = data._links.self.href.slice(38, 70);
+        return recipe;
+      });
+    });
   }
 }
