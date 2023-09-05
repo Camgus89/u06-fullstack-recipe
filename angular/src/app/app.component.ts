@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from './auth/user.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,8 +8,7 @@ import { UserService } from './auth/user.service';
 })
 export class AppComponent {
   title = 'Recipe';
-  logoutMessageVisible: boolean = false; // Lägg till logoutMessageVisible som en boolesk egenskap här
-
+  logoutMessageVisible: boolean = false;
 
   me = {
     id: 0,
@@ -19,7 +17,6 @@ export class AppComponent {
     password: "sebsebseb",
   }
 
-
   user2 = {
     id: 0,
     name: "",
@@ -27,9 +24,12 @@ export class AppComponent {
     password: "",
   }
 
-  constructor(private userService: UserService){
-  }
+  isLoggedIn: boolean = false; // Lägg till isLoggedIn som en boolesk egenskap
 
+  constructor(private userService: UserService) {
+    // Uppdatera isLoggedIn baserat på om token finns i localStorage
+    this.isLoggedIn = localStorage.getItem("token") !== null;
+  }
 
   logout() {
     this.userService.logoutUser();

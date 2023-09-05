@@ -9,21 +9,16 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserService {
-
-  // name: string = '';
-  // email: string = '';
-  // password: string = '';
-  // password_confirmation: string = '';
-
   configURL = "http://localhost:8000/api/";
-
 
   httpOptions = {
     headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-    'Authorization': 'Bearer '
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer '
     })
   }
+
+  private isLoggedOut: boolean = false; // Variabel för att hålla koll på utloggning
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -34,22 +29,27 @@ export class UserService {
         console.log(res);
         localStorage.setItem("token", res.token);
         console.log("test successful");
+        this.isLoggedOut = false; // Användaren är inte utloggad när de loggar in
         this.router.navigate(['/welcome'], { queryParams: { userName: user.name } });
       });
   }
 
   logoutUser() {
     localStorage.removeItem("token");
+    this.isLoggedOut = true; // Markera att användaren har loggat ut
     console.log("logged out");
-  }  
+  }
 
   registerUser(user: User) {
     this.http.post<any>(this.configURL + "register", user, this.httpOptions)
-    .pipe(catchError(this.handleError))
-    .subscribe(res => {
-      console.log(res);
-      // localStorage.setItem("token", res.token);
-    })
+      .pipe(catchError(this.handleError))
+      .subscribe(res => {
+        console.log(res);
+      })
+  }
+
+  isUserLoggedOut(): boolean {
+    return this.isLoggedOut;
   }
 
   private handleError(error: HttpErrorResponse) {
