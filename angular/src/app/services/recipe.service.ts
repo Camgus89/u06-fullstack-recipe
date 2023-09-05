@@ -18,6 +18,11 @@ export class RecipeService {
     })
   }
 
+  getRecipesByFilter(filter: string) {
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&app_id=${this.appid}&app_key=${this.appkey}&mealType=${filter}&field=label&field=image&field=ingredientLines`;
+    return this.getRecipesByURL(url);
+  }
+
   constructor(private http: HttpClient) { }
 
   getRecipesByURL(url: string) {

@@ -7,6 +7,18 @@
     <button type="button" (click)="getDinnerRecipes()">Dinner Recipes</button>
   </div>
 
+  <div class="filter-container">
+    <label>
+      <input type="checkbox" [(ngModel)]="filterNuts"> Nötter
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="filterVegetarian"> Vegetarian
+    </label>
+    <label>
+      <input type="checkbox" [(ngModel)]="filterGluten"> Gluten
+    </label>
+  </div>
+
   <div class="input-container">
     <input type="text" class="form-control" #input placeholder="Search Recipes" [(ngModel)]="searchquery">
     <button type="button" (click)="getRecipes()">Search ALL Recipes</button>

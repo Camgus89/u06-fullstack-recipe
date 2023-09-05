@@ -11,6 +11,10 @@ export class RecipesComponent {
   searchquery = "";
   allRecipes: any;
 
+  filterNuts: boolean = false;
+  filterVegetarian: boolean = false;
+  filterGluten: boolean = false;
+
   constructor(private recipeService: RecipeService) { }
 
   getBreakfastRecipes() {
