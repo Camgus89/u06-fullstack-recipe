@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'recipe/:id', component: RecipeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'welcome', component: WelcomeComponent }, // Lägg till den här vägen
+  { path: 'welcome', component: WelcomeComponent },
 ]
 
 @NgModule({

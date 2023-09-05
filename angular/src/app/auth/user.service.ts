@@ -38,10 +38,10 @@ export class UserService {
       });
   }
 
-  logoutUser(user: User) {
+  logoutUser() {
     localStorage.removeItem("token");
-    console.log("logged out")
-  }
+    console.log("logged out");
+  }  
 
   registerUser(user: User) {
     this.http.post<any>(this.configURL + "register", user, this.httpOptions)

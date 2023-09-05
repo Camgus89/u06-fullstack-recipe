@@ -9,6 +9,8 @@ import { UserService } from './auth/user.service';
 })
 export class AppComponent {
   title = 'Recipe';
+  logoutMessageVisible: boolean = false; // Lägg till logoutMessageVisible som en boolesk egenskap här
+
 
   me = {
     id: 0,
@@ -16,7 +18,7 @@ export class AppComponent {
     email: "seb@seb.seb",
     password: "sebsebseb",
   }
-  //LOGIN FORMULÄR
+
 
   user2 = {
     id: 0,
@@ -29,8 +31,8 @@ export class AppComponent {
   }
 
 
-  logout(){
-    this.userService.logoutUser(this.me)
+  logout() {
+    this.userService.logoutUser();
+    this.logoutMessageVisible = true; // Visa meddelandet när användaren loggar ut
   }
-
 }
