@@ -24,15 +24,14 @@ export class AppComponent {
     password: "",
   }
 
-  isLoggedIn: boolean = false; // Lägg till isLoggedIn som en boolesk egenskap
+  isLoggedIn: boolean = false;
 
   constructor(private userService: UserService) {
-    // Uppdatera isLoggedIn baserat på om token finns i localStorage
     this.isLoggedIn = localStorage.getItem("token") !== null;
   }
 
   logout() {
     this.userService.logoutUser();
-    this.logoutMessageVisible = true; // Visa meddelandet när användaren loggar ut
+    this.logoutMessageVisible = true;
   }
 }
