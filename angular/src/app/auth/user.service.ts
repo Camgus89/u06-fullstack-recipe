@@ -18,7 +18,7 @@ export class UserService {
     })
   }
 
-  private isLoggedOut: boolean = false; // Variabel för att hålla koll på utloggning
+  private isLoggedIn: boolean = false; // Variabel för att hålla koll på inloggning
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -29,14 +29,14 @@ export class UserService {
         console.log(res);
         localStorage.setItem("token", res.token);
         console.log("test successful");
-        this.isLoggedOut = false; // Användaren är inte utloggad när de loggar in
+        this.isLoggedIn = true; // Användaren är inloggad när de loggar in
         this.router.navigate(['/welcome'], { queryParams: { userName: user.name } });
       });
   }
 
   logoutUser() {
     localStorage.removeItem("token");
-    this.isLoggedOut = true; // Markera att användaren har loggat ut
+    this.isLoggedIn = false; // Markera att användaren har loggat ut
     console.log("logged out");
   }
 
@@ -48,8 +48,8 @@ export class UserService {
       })
   }
 
-  isUserLoggedOut(): boolean {
-    return this.isLoggedOut;
+  isUserLoggedIn(): boolean {
+    return this.isLoggedIn;
   }
 
   private handleError(error: HttpErrorResponse) {
