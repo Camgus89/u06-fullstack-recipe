@@ -27,11 +27,16 @@ export class UserService {
       .pipe(catchError(this.handleError))
       .subscribe(res => {
         console.log(res);
-        localStorage.setItem("token", res.token);
-        console.log("test successful");
+        const token = res.token; // Hämta JWT-token från API-svaret
+        localStorage.setItem("token", token);
+        this.setToken(token); // Spara token i httpOptions
         this.isLoggedIn = true; // Användaren är inloggad när de loggar in
         this.router.navigate(['/welcome'], { queryParams: { userName: user.name } });
       });
+  }
+  
+  setToken(token: string) {
+    this.httpOptions.headers = this.httpOptions.headers.set('Authorization', `Bearer ${token}`);
   }
 
   logoutUser() {

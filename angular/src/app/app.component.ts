@@ -30,8 +30,9 @@ export class AppComponent {
     this.isLoggedIn = localStorage.getItem("token") !== null;
   }
 
-  logout() {
-    this.userService.logoutUser();
-    this.logoutMessageVisible = true;
+// I app.component.ts
+logout() {
+  this.userService.logoutUser();
+  this.logoutMessageVisible = true;
   }
 }

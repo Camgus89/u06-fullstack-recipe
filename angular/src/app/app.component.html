@@ -1,18 +1,19 @@
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container d-flex justify-content-between align-items-center">
-    <a class="navbar-brand mr-auto" href="#">
+    <a class="navbar-brand mr-auto" routerLink="/" routerLinkActive="active">
       <img src="./assets/logo.png" alt="Logo" width="50" height="50">
     </a>
     <div class="ml-auto">
       <button class="btn btn-primary" type="button" routerLink="/login" *ngIf="!isLoggedIn">LOGIN</button>
       <button class="btn btn-success" type="button" routerLink="/register" *ngIf="!isLoggedIn">REGISTER</button>
       <button class="btn btn-primary" type="button" (click)="logout()" *ngIf="isLoggedIn">LOGOUT</button>
+      <p *ngIf="logoutMessageVisible">Logged out</p>
     </div>
   </div>
 </nav>
+
 
 <app-logout-message *ngIf="logoutMessageVisible"></app-logout-message>
 
 <router-outlet></router-outlet>
 <app-footer></app-footer>
-

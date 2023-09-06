@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +17,6 @@ export class RecipeService {
     })
   }
 
-  getRecipesByFilter(filter: string) {
-    const url = `https://api.edamam.com/api/recipes/v2?type=public&app_id=${this.appid}&app_key=${this.appkey}&mealType=${filter}&field=label&field=image&field=ingredientLines`;
-    return this.getRecipesByURL(url);
-  }
-
   constructor(private http: HttpClient) { }
 
   getRecipesByURL(url: string) {
@@ -30,22 +24,27 @@ export class RecipeService {
   }
 
   getBreakfastRecipes() {
-    const url = "https://api.edamam.com/api/recipes/v2?type=public&app_id=" + this.appid + "&app_key=" + this.appkey + "&cuisineType=American&mealType=Breakfast&dishType=Bread&dishType=Condiments%20and%20sauces&dishType=Pancake&dishType=Sandwiches&field=label&field=image&field=ingredientLines&field=ingredients"; // Uppdatera URL till det nya API:et
+    const url = "https://api.edamam.com/api/recipes/v2?type=public&app_id=" + this.appid + "&app_key=" + this.appkey + "&cuisineType=American&mealType=Breakfast&dishType=Bread&dishType=Condiments%20and%20sauces&dishType=Pancake&dishType=Sandwiches&field=label&field=image&field=ingredientLines&field=ingredients&health=gluten-free&health=peanut-free&health=tree-nut-free&health=vegetarian"; // Uppdatera URL till det nya API:et
     return this.getRecipesByURL(url);
-}
+  }
 
   getDinnerRecipes() {
-    const url = "https://api.edamam.com/api/recipes/v2?type=public&app_id=" + this.appid + "&app_key=" + this.appkey + "&cuisineType=Italian&mealType=Dinner&dishType=Pancake&dishType=Salad&dishType=Sandwiches&dishType=Soup&field=label&field=image&field=ingredientLines&field=ingredients"; // Uppdatera URL till det nya API:et
+    const url = "https://api.edamam.com/api/recipes/v2?type=public&app_id=" + this.appid + "&app_key=" + this.appkey + "&cuisineType=Italian&mealType=Dinner&dishType=Pancake&dishType=Salad&dishType=Sandwiches&dishType=Soup&field=label&field=image&field=ingredientLines&field=ingredients&health=gluten-free&health=peanut-free&health=tree-nut-free&health=vegetarian"; // Uppdatera URL till det nya API:et
     return this.getRecipesByURL(url);
-}
+  }
 
   getLunchRecipes() {
-    const url = "https://api.edamam.com/api/recipes/v2?type=public&app_id=" + this.appid + "&app_key=" + this.appkey + "&cuisineType=French&mealType=Lunch&dishType=Pancake&dishType=Salad&dishType=Sandwiches&dishType=Soup&field=label&field=image&field=ingredientLines&field=ingredients"; // Uppdatera URL till det nya API:et
+    const url = "https://api.edamam.com/api/recipes/v2?type=public&app_id=" + this.appid + "&app_key=" + this.appkey + "&cuisineType=French&mealType=Lunch&dishType=Pancake&dishType=Salad&dishType=Sandwiches&dishType=Soup&field=label&field=image&field=ingredientLines&field=ingredients&health=gluten-free&health=peanut-free&health=tree-nut-free&health=vegetarian"; // Uppdatera URL till det nya API:et
     return this.getRecipesByURL(url);
-}
+  }
+
+  getRecipesByFilter(filter: string, healthFilters: string) {
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&app_id=${this.appid}&app_key=${this.appkey}&mealType=${filter}&field=label&field=image&field=ingredientLines&field=ingredients&${healthFilters}`;
+    return this.getRecipesByURL(url);
+  }
 
   getRecipesByKeyword(keyword: string) {
-    const url = "https://api.edamam.com/api/recipes/v2?type=public" + "&q=" + keyword + "&app_id=" + this.appid + "&app_key=" + this.appkey + "&cuisineType=American&field=label&field=image&field=ingredientLines";
+    const url = `https://api.edamam.com/api/recipes/v2?type=public&q=${keyword}&app_id=${this.appid}&app_key=${this.appkey}&cuisineType=American&field=label&field=image&field=ingredientLines&field=ingredients&health=gluten-free&health=peanut-free&health=tree-nut-free&health=vegetarian`;
     return this.getRecipesByURL(url);
   }
 

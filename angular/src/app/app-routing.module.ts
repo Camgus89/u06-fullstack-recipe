@@ -4,16 +4,17 @@ import { RecipeComponent } from './recipes/recipe/recipe.component';
 import { RecipesComponent } from './recipes/recipes/recipes.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { WelcomeComponent } from './components/welcome/welcome.component'; // Uppdatera sökvägen beroende på din projektstruktur
+import { WelcomeComponent } from './components/welcome/welcome.component';
 
 const routes: Routes = [
-  { path: '', component: RecipesComponent },
+  { path: 'recipes', component: RecipesComponent },
   { path: 'recipe/:id', component: RecipeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'welcome', component: WelcomeComponent },
-  { path: '', redirectTo: '/welcome', pathMatch: 'full' }, // Omdirigera till Välkommen som standardruta
+  { path: '', redirectTo: '/welcome', pathMatch: 'full' },
 ]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

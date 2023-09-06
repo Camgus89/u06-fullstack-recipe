@@ -93,3 +93,19 @@ button:hover {
     font-size: 14px;
     margin-top: 10px;
 }
+
+/* Centrera vertikalt och horisontellt */
+.checkbox-container {
+    display: flex;
+    flex-direction: row; /* Visa checkboxar i en kolumn */
+    justify-content: center; /* Centrera vertikalt */
+    align-items: center; /* Centrera horisontellt */
+    margin-top: 20px; /* Justera önskad marginal över checkboxarna */
+}
+  
+  /* Justera avståndet mellan checkboxarna */
+  label {
+    margin-right: 20px; /* Justera önskat avstånd mellan label och nästa checkbox */
+}
+
+  
