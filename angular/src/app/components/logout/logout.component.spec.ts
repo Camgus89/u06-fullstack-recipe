@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecipeFilterComponent } from './recipe-filter.component';
+import { LogoutComponent } from './logout.component';
 
-describe('RecipeFilterComponent', () => {
-  let component: RecipeFilterComponent;
-  let fixture: ComponentFixture<RecipeFilterComponent>;
+describe('LogoutComponent', () => {
+  let component: LogoutComponent;
+  let fixture: ComponentFixture<LogoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RecipeFilterComponent ]
+      declarations: [ LogoutComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RecipeFilterComponent);
+    fixture = TestBed.createComponent(LogoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

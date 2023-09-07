@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UserService } from './auth/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import { UserService } from './auth/user.service';
 export class AppComponent {
   title = 'Recipe';
   logoutMessageVisible: boolean = false;
+  isLoggedIn: boolean = false; // Endast en deklaration av isLoggedIn
 
   me = {
     id: 0,
@@ -24,15 +26,12 @@ export class AppComponent {
     password: "",
   }
 
-  isLoggedIn: boolean = false;
-
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
     this.isLoggedIn = localStorage.getItem("token") !== null;
   }
-
-// I app.component.ts
-logout() {
-  this.userService.logoutUser();
-  this.logoutMessageVisible = true;
+  
+  logout() {
+    this.userService.logoutUser();
+    this.router.navigate(['/logout']); // Navigera till logout-sidan
   }
 }

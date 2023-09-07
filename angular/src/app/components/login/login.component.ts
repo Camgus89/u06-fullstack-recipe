@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { UserService } from 'src/app/auth/user.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms'; // Importera Validators
 
 @Component({
   selector: 'app-login',
@@ -11,12 +11,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class LoginComponent {
 
-  loginForm:FormGroup;
+  loginForm: FormGroup;
 
-  constructor(private userService: UserService, private router:Router, private httpClient:HttpClient, public fb: FormBuilder) {
-    this.loginForm=this.fb.group({
-      email:[], password:[]
-    })
+  constructor(private userService: UserService, private router: Router, private httpClient: HttpClient, public fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]], // Lägg till Validators
+      password: ['', Validators.required] // Lägg till Validators
+    });
   }
 
   me = {
@@ -26,9 +27,12 @@ export class LoginComponent {
     password: "sebsebseb",
   }
 
-  login(){
-    this.userService.loginUser(this.loginForm.value);
-    this.router.navigate(['/']);
+  login() {
+    if (this.loginForm.valid) {
+      this.userService.loginUser(this.loginForm.value);
+      this.router.navigate(['/']);
+    } else {
+      // Visa felmeddelande för användaren om formuläret inte är giltigt
+    }
   }
-
 }

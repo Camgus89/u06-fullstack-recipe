@@ -5,6 +5,7 @@ import { RecipesComponent } from './recipes/recipes/recipes.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   { path: 'recipes', component: RecipesComponent },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'welcome', component: WelcomeComponent },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' },
+  { path: 'logout', component: LogoutComponent },
 ]
 
 
