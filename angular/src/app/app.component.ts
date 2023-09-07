@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'Recipe';
   logoutMessageVisible: boolean = false;
-  isLoggedIn: boolean = false; // Endast en deklaration av isLoggedIn
+  isLoggedIn: boolean = false;
 
   me = {
     id: 0,
@@ -32,6 +32,6 @@ export class AppComponent {
   
   logout() {
     this.userService.logoutUser();
-    this.router.navigate(['/logout']); // Navigera till logout-sidan
+    this.router.navigate(['/logout']); 
   }
 }

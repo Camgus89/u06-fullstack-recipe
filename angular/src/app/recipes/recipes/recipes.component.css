@@ -26,21 +26,21 @@ img {
 
 .meal-type-buttons {
     display: flex;
-    justify-content: center; /* Centrera knapparna horisontellt */
+    justify-content: center;
     width: 90%;
-    margin: 10px auto; /* Centrera knapparna både horisontellt och vertikalt */
+    margin: 10px auto;
 }
 
 .meal-type-buttons button {
-    width: 30%; /* Justera bredden enligt ditt önskemål */
+    width: 30%; 
     background: #FFB74D;
     color: #fff;
     border-radius: 15px;
     padding: 10px;
-    margin: 10px 5px; /* Lägg till lite marginal mellan knapparna */
+    margin: 10px 5px; 
     border: none;
     transition: background-color 0.3s;
-    font-size: 14px; /* Justera textstorleken */
+    font-size: 14px; 
 }
 
 .meal-type-buttons button:hover {
@@ -53,7 +53,7 @@ button {
     color: #fff;
     border-radius: 15px;
     padding: 10px;
-    margin: 10px auto; /* Centrera knappen både horisontellt och vertikalt */
+    margin: 10px auto; 
     border: none;
     transition: background-color 0.3s;
 }
@@ -94,18 +94,16 @@ button:hover {
     margin-top: 10px;
 }
 
-/* Centrera vertikalt och horisontellt */
 .checkbox-container {
     display: flex;
-    flex-direction: row; /* Visa checkboxar i en kolumn */
-    justify-content: center; /* Centrera vertikalt */
-    align-items: center; /* Centrera horisontellt */
-    margin-top: 20px; /* Justera önskad marginal över checkboxarna */
+    flex-direction: row; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 20px; 
 }
   
-  /* Justera avståndet mellan checkboxarna */
   label {
-    margin-right: 20px; /* Justera önskat avstånd mellan label och nästa checkbox */
+    margin-right: 20px; 
 }
 
   

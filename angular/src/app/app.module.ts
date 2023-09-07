@@ -13,7 +13,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
-import { LogoutMessageComponent } from './components/logout-message/logout-message.component';
 import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
@@ -27,7 +26,6 @@ import { LogoutComponent } from './components/logout/logout.component';
     LoginComponent,
     RegisterComponent,
     WelcomeComponent,
-    LogoutMessageComponent,
     LogoutComponent,
   ],
   imports: [

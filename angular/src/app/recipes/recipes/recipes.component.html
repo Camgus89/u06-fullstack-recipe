@@ -7,7 +7,6 @@
     <button type="button" (click)="getDinnerRecipes()">Dinner Recipes</button>
   </div>
 
- <!-- Checkbox-container för filter -->
 <div class="checkbox-container">
   <label>
     <input type="checkbox" [(ngModel)]="filterNuts"> Nuts
@@ -25,7 +24,6 @@
     <button type="button" (click)="getRecipes()">Search ALL Recipes</button>
   </div>
 
-  <!-- Använd container-diven med layout-klassen -->
   <div class="recipe-card-container">
     <article class="recipe-card" *ngFor="let recipe of allRecipes">
       <h2 class="recipe-title"><a [routerLink]="'recipe/'+recipe.idref" routerLinkActive="active">{{recipe.label}}</a></h2>

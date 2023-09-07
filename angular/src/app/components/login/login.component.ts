@@ -32,7 +32,6 @@ export class LoginComponent {
       this.userService.loginUser(this.loginForm.value);
       this.router.navigate(['/']);
     } else {
-      // Visa felmeddelande för användaren om formuläret inte är giltigt
     }
   }
 }

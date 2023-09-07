@@ -18,7 +18,7 @@ export class UserService {
     })
   }
 
-  private isLoggedIn: boolean = false; // Variabel för att hålla koll på inloggning
+  private isLoggedIn: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) { }
 
@@ -27,10 +27,10 @@ export class UserService {
       .pipe(catchError(this.handleError))
       .subscribe(res => {
         console.log(res);
-        const token = res.token; // Hämta JWT-token från API-svaret
+        const token = res.token; 
         localStorage.setItem("token", token);
-        this.setToken(token); // Spara token i httpOptions
-        this.isLoggedIn = true; // Användaren är inloggad när de loggar in
+        this.setToken(token); 
+        this.isLoggedIn = true; 
         this.router.navigate(['/welcome'], { queryParams: { userName: user.name } });
       });
   }
@@ -41,7 +41,7 @@ export class UserService {
 
   logoutUser() {
     localStorage.removeItem("token");
-    this.isLoggedIn = false; // Markera att användaren har loggat ut
+    this.isLoggedIn = false;
     console.log("logged out");
   }
 
@@ -59,15 +59,12 @@ export class UserService {
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 0) {
-      // A client-side or network error occurred. Handle it accordingly.
       console.error('An error occurred:', error.error);
     } else {
-      // The backend returned an unsuccessful response code.
-      // The response body may contain clues as to what went wrong.
+
       console.error(
         `Backend returned code ${error.status}, body was: `, error.error);
     }
-    // Return an observable with a user-facing error message.
     return throwError(() => new Error('Something bad happened; please try again later.'));
   }
 }

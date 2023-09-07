@@ -10,7 +10,7 @@
 
 .navbar-brand {
   display: flex;
-  align-items: center; /* Centrera vertikalt */
+  align-items: center; 
 }
 
 .navbar-brand img {
@@ -18,7 +18,7 @@
 }
 
 .navbar-brand, .navbar-toggler {
-  margin-right: auto; /* Flytta logon till vänster och knapparna till höger */
+  margin-right: auto; 
 }
 
 button{
@@ -33,6 +33,6 @@ button{
 }
 
 button:hover {
-  background-color: #D7CCC8; /* Ny färg vid hover */
+  background-color: #D7CCC8; 
 }
 

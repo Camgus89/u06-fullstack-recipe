@@ -1,14 +1,14 @@
 .box {
   margin: auto;
   display: flex;
-  flex-direction: column; /* Ändra flex-riktningen till kolumn */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 50px;
   border: 2px solid #A5D6A7;
   border-radius: 5px;
-  max-width: 400px; /* Maximal bredd för rutan */
-  margin-top: 30px; /* Uppdatera margin-top för att centrera vertikalt */
+  max-width: 400px;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .input-field {
-  width: 100%; /* Fyll hela bredden av föräldern */
+  width: 100%;
   padding: 10px;
   margin-bottom: 10px;
 }
