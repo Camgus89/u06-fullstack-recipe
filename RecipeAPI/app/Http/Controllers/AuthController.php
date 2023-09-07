@@ -44,23 +44,31 @@ class AuthController extends Controller
             'email' => 'required|string',
             'password' => 'required|string'
         ]);
-
-        $user = User::where('email', $fields['email'])->first();
-
-        if (!$user || !HASH::check($fields['password'], $user->password)) {
-            return response([
-                "message" => "Credentials not correct"
+    
+        $user = User::where('email', $request->input('email'))->first();
+    
+        if (!$user) {
+            return response()->json([
+                "message" => "Användaren existerar inte"
             ], 401);
         }
+    
+        if (!HASH::check($fields['password'], $user->password)) {
+            return response()->json([
+                "message" => "Fel lösenord"
+            ], 401);
+        }
+    
         $token = $user->createToken('myAppToken')->plainTextToken;
-
+    
         $response = [
             'user' => $user,
             'token' => $token
         ];
-
+    
         return response($response, 201);
     }
+    
 
     public function getUser($id)
     {
