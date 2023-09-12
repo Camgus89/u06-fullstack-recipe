@@ -9,7 +9,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 
 const routes: Routes = [
   { path: 'recipes', component: RecipesComponent },
-  { path: 'recipe/:id', component: RecipeComponent },
+  { path: 'recipes/recipe/:id', component: RecipeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'welcome', component: WelcomeComponent },

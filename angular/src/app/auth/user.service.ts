@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class UserService {
   configURL = "http://localhost:8000/";
+  // configURL = "https://u06-fullstack-recipe-production.up.railway.app/";
+
 
   httpOptions = {
     headers: new HttpHeaders({
