@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserService {
-  configURL = "https://u06-fullstack-recipe-production.up.railway.app/";
+  configURL = "http://u06-fullstack-recipe-production.up.railway.app";
 
   httpOptions = {
     headers: new HttpHeaders({
