@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UserService {
-  // configURL = "http://localhost:8000/api/";
-  configURL = "https://u06-fullstack-recipe-production.up.railway.app/api/";
+  configURL = "http://localhost:8000/api/";
+  // configURL = "https://u06-fullstack-recipe-production.up.railway.app/api/";
 
 
   httpOptions = {
